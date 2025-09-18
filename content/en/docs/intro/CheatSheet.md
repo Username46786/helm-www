@@ -74,6 +74,29 @@ helm rollback <release> <revision>                        # Roll back a release 
 helm rollback <release> <revision>  --cleanup-on-fail     # Allow deletion of new resources created in this rollback when rollback fails
 ``` 
 ------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Upgrade safely: dry-run, wait, timeout, and atomic rollback
+
+Before applying changes to a live release, it’s a good idea to simulate the upgrade and control how Helm waits for your workloads to become Ready.
+
+**1) Preview the upgrade**
+```bash
+helm upgrade my-release ./chart \
+  --dry-run --debug
+``` 
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+**2) Perform a guarded upgrade**
+```bash
+helm upgrade my-release ./chart \
+  --install \
+  --wait \
+  --timeout 5m \
+  --atomic
+
+``` 
+------------------------------------------------------------------------------------------------------------------------------------------------
+
 ### List, Add, Remove, and Update Repositories
 
 ```bash
