@@ -68,7 +68,7 @@ helm upgrade <release> <chart> --atomic                   # If set, upgrade proc
 helm upgrade <release> <chart> --dependency-update        # update dependencies if they are missing before installing the chart
 helm upgrade <release> <chart> --version <version_number> # specify a version constraint for the chart version to use
 helm upgrade <release> <chart> --values                   # specify values in a YAML file or a URL (can specify multiple)
-helm upgrade <release> <chart> --set key1=val1,key2=val2  # Set values on the command line (can specify multiple or separate valuese)
+helm upgrade <release> <chart> --set key1=val1,key2=val2  # Set values on the command line (can specify multiple or separate values)
 helm upgrade <release> <chart> --force                    # Force resource updates through a replacement strategy
 helm rollback <release> <revision>                        # Roll back a release to a specific revision
 helm rollback <release> <revision>  --cleanup-on-fail     # Allow deletion of new resources created in this rollback when rollback fails
